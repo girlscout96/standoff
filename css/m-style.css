@@ -1,0 +1,487 @@
+@media only screen and (min-width: 40em) {
+  .modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/**
+  * Modal
+  */
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: center;*/
+  position: relative;
+  margin: 0 auto;
+  background: linear-gradient(#1f212a, #0d0e12);
+  width: 600px;
+  max-width: 75rem;
+  min-height: 20rem;
+  /* padding: 1rem; */
+  border-radius: 15px;
+  opacity: 0;
+  overflow-y: auto;
+  visibility: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index:100;
+}
+.modal-head{
+  position: relative;
+  border-bottom: 2px solid #2c2f3b;
+  width: 100%;
+}
+.modal-head h3{
+  font-size: 16px;
+  font-family: "MontserratSB", sans-serif;
+  text-transform: uppercase;
+  /*color: #ffd400;
+  -webkit-text-shadow: 0 0 6px rgba(255, 212, 0, .95), 0 0 6px rgba(255, 212, 0, .25);
+  text-shadow: 0 0 6px rgba(255, 212, 0, .95), 0 0 6px rgba(255, 212, 0, .25);*/
+  padding: 20px 10px;
+  text-align: center;
+}
+.modal .close-modal {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 15px;
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition-delay: 0.3s;
+}
+.modal .close-modal svg {
+  width: 1.75em;
+  height: 1.75em;
+}
+.modal .modal-content {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition-delay: 0.3s;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal.active {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.modal.active .modal-content {
+  opacity: 1;
+}
+.modal.active .close-modal {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  opacity: 1;
+}
+.modal-content input[type="submit"]{
+  font-size:16px;
+  cursor:pointer;
+}
+.modal-content .for-note {
+  padding: 20px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.modal-content input[type="number"]{
+  height: 40px;
+  width: 200px;
+  background-color: transparent;
+  border-bottom: 2px solid #ffd400;
+  text-align: center;
+  font-size: 22px;
+  /* font-family: "MontserratSB", sans-serif; */
+  color: #fff;
+}
+.modal-content input[type="number"]::-webkit-outer-spin-button,
+.modal-content input[type="number"]::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.modal-content form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-content .payment-system-logo{
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 150px);
+  flex-wrap: wrap;
+  margin-top:10px;
+}
+.modal-content .payment-system-logo .qiwi{
+  display: block;
+  height:40px;
+  width:110px;
+  background: transparent url("../img/qiwi.png") center center no-repeat;
+  background-size: contain;
+}
+.modal-content .payment-system-logo .ym{
+  display: block;
+  height:40px;
+  width:95px;
+  background: transparent url("../img/ym.png") center center no-repeat;
+  background-size: contain;
+}
+.modal-content .payment-system-logo .wm{
+  display: block;
+  height:40px;
+  width:155px;
+  background: transparent url("../img/wm.png") center center no-repeat;
+  background-size: contain;
+}
+.modal-content .payment-system-logo .mc{
+  display: block;
+  height:40px;
+  width:70px;
+  background: transparent url("../img/mc.png") center center no-repeat;
+  background-size: contain;
+}
+.modal-content .payment-system-logo .visa{
+  display: block;
+  height:40px;
+  width:125px;
+  background: transparent url("../img/visa.png") center center no-repeat;
+  background-size: contain;
+}
+.modal-content .payment-system-logo-bg{
+  margin:10px;
+}
+.modal-content .ps{
+  color:#6b6b6b;
+  line-height: 1.2;
+  font-size: 14px;
+}
+.modal-content .ps a{
+  color:#fff;
+}
+.modal-content .ps a:hover{
+  color:#ffd400;
+}
+.modal-content label{
+  text-transform: uppercase;
+}
+.promo-btn-margin,
+.promo-label-margin{
+  margin-top:30px;
+}
+.modal-content input[type="text"] {
+  height: 40px;
+  width: 300px;
+  background-color: transparent;
+  border-bottom: 2px solid #ffd400;
+  text-align: center;
+  font-size: 16px;
+  /* font-family: "MontserratSB", sans-serif; */
+  color: #fff;
+  margin-top:20px;
+}
+/*.m-create-chat .wrn-icon{
+  display: block;
+  height:40px;
+  width:40px;
+  margin-top:20px;
+  margin-bottom: 10px;
+  background: transparent url("../img/warning.svg") center center no-repeat;
+  background-size:40px;
+}*/
+.modal .m-create-chat .for-note{
+  padding: 0 15px 0;
+  font-size: 14px;
+}
+.chat-label-margin{
+  margin-top:10px;
+}
+#appealTopic{
+  margin-top: 15px;
+  text-align: start;
+  width: 482px;
+  font-family: MontserratR, sans-serif;
+}
+#appealText{
+  height: 50px;
+  max-height: 80px;
+  min-height: 50px;
+  width: 450px;
+  resize: vertical;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+  font-family: MontserratR, sans-serif;
+  color: #000;
+  margin-top: 15px;
+}
+.m-create-chat p:first-child{
+  margin-top:20px;
+}
+#appealText::-webkit-scrollbar-button,
+#boosterShyrp .action-for::-webkit-scrollbar-button  {
+  width:5px;
+  height:0px
+}
+#appealText::-webkit-scrollbar-track,
+#boosterShyrp .action-for::-webkit-scrollbar-track {
+  width: 4px;
+  background-color:#f1fafd;
+}
+#appealText::-webkit-scrollbar-thumb,
+#boosterShyrp .action-for::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color:#0c0d10;
+  width: 4px;
+}
+#appealText::-webkit-scrollbar-thumb:hover,
+#boosterShyrp .action-for::-webkit-scrollbar-thumb:hover{
+  background-color:#1a1c22;
+  width: 4px;
+}
+#appealText::-webkit-scrollbar,
+#boosterShyrp .action-for::-webkit-scrollbar{
+  width: 4px;
+}
+.m-create-chat form{
+  padding-bottom:30px;
+}
+.booster-desc{
+  margin-top:30px;
+  color: #6b6b6b;
+  line-height: 1.5;
+  padding:0 20px;
+  text-align: center;
+}
+.receipt-condition{
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-top:15px;
+  padding:0 15px;
+  text-align: center;
+}
+#boosterLuck .action-for{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 130px;
+}
+#boosterBonus .action-for{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+#boosterLuck .modal,
+#promoWindow .modal,
+#createTrade .modal,
+#successTradeSending .modal{
+  min-height: 18rem;
+}
+#warningChatCreate .modal{
+  min-height: 16rem;
+}
+#boosterShyrp .action-for{
+  max-height: 200px;
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+#boosterShyrp .modal-content,
+#warningTradeSending  .modal-content,
+#beginnersWindow .modal-content{
+  padding-bottom: 30px;
+}
+.warning-title{
+  color:#e80a0a;
+  -webkit-text-shadow: 0 0 6px rgba(232, 10, 10, .95), 0 0 6px rgba(232, 10, 10, .25);
+  text-shadow: 0 0 6px rgba(232, 10, 10, .95), 0 0 6px rgba(232, 10, 10, .25);
+}
+.success-title{
+  color:#2dbe60;
+  -webkit-text-shadow: 0 0 6px rgba(45, 190, 96, .95), 0 0 6px rgba(45, 190, 96, .25);
+  text-shadow: 0 0 6px rgba(45, 190, 96, .95), 0 0 6px rgba(45, 190, 96, .25);
+}
+.m-find-request{
+  color:#ffd400;
+}
+.ntf-success-trade{
+  display: block;
+  height:40px;
+  width:40px;
+  -webkit-box-shadow: 0 0 15px 0 rgba(45, 190, 96, .55);
+  box-shadow: 0 0 15px 0 rgba(45, 190, 96, .55);
+  background: #2dbe60 url("../img/warning-sign.svg") center center no-repeat;
+  background-size:20px;
+  border-radius: 50%;
+  margin: 20px 0 0;
+}
+#warningChatCreate p{
+  font-size: 16px;
+}
+#successTradeSending .for-note,
+#warningTradeSending .for-note{
+  padding:5px 15px 0;
+}
+#successTradeSending .for-note:first-child,
+#warningTradeSending .for-note:first-child{
+  padding-top:15px;
+}
+#successTradeSending .open-case-btn{
+  background: linear-gradient(0deg, #0b9b3e, #2dbe60);
+  -webkit-box-shadow: 0 0 15px 0 rgba(45, 190, 96, .55);
+  box-shadow: 0 0 15px 0 rgba(45, 190, 96, .55);
+}
+#successTradeSending .open-case-btn:hover{
+  -webkit-box-shadow: 0 0 20px 0 rgba(45, 190, 96, .55);
+  box-shadow: 0 0 20px 0 rgba(45, 190, 96, .55)
+}
+#warningTradeSending .open-case-btn,
+#warningChatCreate .open-case-btn{
+  background: linear-gradient(0deg, #b60000, #e80a0a);
+  -webkit-box-shadow: 0 0 15px 0 rgba(232, 10, 10, .55);
+  box-shadow: 0 0 15px 0 rgba(232, 10, 10, .55);
+}
+#warningTradeSending .open-case-btn:hover,
+#warningChatCreate .open-case-btn{
+  -webkit-box-shadow: 0 0 20px 0 rgba(232, 10, 10, .55);
+  box-shadow: 0 0 20px 0 rgba(232, 10, 10, .55)
+}
+#warningTradeSending .ps{
+  margin-top:20px;
+  line-height: 1.4;
+}
+#warningTradeSending .for-note span{
+  color:#ffd400;
+  font-family: MontserratSB, sans-serif;
+}
+#beginnersWindow .modal-head{
+  border:none;
+}
+#beginnersWindow .big-title{
+  text-transform: uppercase;
+  padding: 20px 50px;
+  text-align: center;
+  line-height: 1.6;
+}
+#beginnersWindow img{
+  display: block;
+  width: 180px;
+  height: 180px;
+}
+/**
+  * Mobile styling
+  */
+@media (max-width: 1009px){
+  .modal-content input[type="submit"]{
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 39.9375em) {
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    padding: 0 !important;
+  }
+  .modal-content .payment-system-logo .qiwi,
+  .modal-content .payment-system-logo .ym,
+  .modal-content .payment-system-logo .wm,
+  .modal-content .payment-system-logo .mc,
+  .modal-content .payment-system-logo .visa{
+    height:20px;
+  }
+  .modal-content .payment-system-logo .qiwi{
+    width:55px;
+  }
+  .modal-content .payment-system-logo .ym{
+    width:50px;
+  }
+  .modal-content .payment-system-logo .wm{
+    width:80px;
+  }
+  .modal-content .payment-system-logo .mc{
+    width:35px;
+  }
+  .modal-content .payment-system-logo .visa{
+    width:65px;
+  }
+  .close-modal {
+    right: 20px !important;
+  }
+  .modal-content .for-note,
+  .chat-label-margin,
+  .promo-label-margin,
+  .modal-content input[type="submit"],
+  #payInWindow label,
+  .modal-head h3,
+  #appealTopic,
+  .booster-desc,
+  .receipt-condition,
+  #warningChatCreate p{
+    font-size:14px;
+  }
+  .modal-content .for-note br{
+    display: none;
+  }
+  .modal-content .ps{
+    padding-top: 10px;
+  }
+  .modal-content .payment-system-logo{
+    width:100%;
+  }
+  .modal-content input[type="number"]{
+    width:150px;
+    font-size:18px;
+  }
+  #appealText{
+    width: calc(100vw - 50px);
+    border-radius: unset;
+  }
+  #appealTopic{
+    width: calc(100vw - 50px);
+    padding: 0 15px;
+  }
+  .modal-content input[type="submit"]{
+    margin-top:20px;
+  }
+
+}
