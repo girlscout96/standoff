@@ -280,7 +280,7 @@
   padding-bottom:30px;
 }
 .booster-desc{
-  margin-top:30px;
+  margin-top:10px;
   color: #6b6b6b;
   line-height: 1.5;
   padding:0 20px;
@@ -321,8 +321,17 @@
 }
 #boosterShyrp .modal-content,
 #warningTradeSending  .modal-content,
-#beginnersWindow .modal-content{
+#beginnersWindow .modal-content,
+#boosterLuck .modal-content,
+#boosterGoldBorder .modal-content{
   padding-bottom: 30px;
+}
+#boosterLuck img,
+#boosterShyrp img,
+#boosterBonus img,
+#boosterGoldBorder img{
+  height:120px;
+  margin-top:20px
 }
 .warning-title{
   color:#e80a0a;
@@ -483,5 +492,4 @@
   .modal-content input[type="submit"]{
     margin-top:20px;
   }
-
 }
