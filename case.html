@@ -21,7 +21,7 @@
       <header> 
           <a href="index.html" class="brand">Логотип</a>
           <nav>  
-            <a href="inventory.html" class="nav-link active-link">инвентарь</a>             
+            <a href="inventory.html">инвентарь</a>             
             <a href="#" class="nav-link __modal-button" data-modal-window="promoWindow" data-modal-action="show">
               <div class="notification-circle">1</div>
               промокод
@@ -83,7 +83,7 @@
                 </div>
               </div>
               <div class="hidden-nav-list">
-                <a href="inventory.html" class="nav-link active-link">инвентарь</a>             
+                <a href="inventory.html">инвентарь</a>             
                 <a href="#" class="nav-link __modal-button" data-modal-window="promoWindow" data-modal-action="show">
                   <div class="notification-circle">1</div>
                   промокод
@@ -230,7 +230,7 @@
           </div>
           <img src="img/5.png">
           <div class="case-value">100 ₽</div>
-          <a href="#" class="open-case-btn">открыть</a>
+          <a href="#" class="open-case-btn __modal-button" data-modal-window="insufficientFunds" data-modal-action="show">открыть</a>
         </div>
 
         <div class="case-group">
@@ -385,6 +385,24 @@
           <input type="submit" class="open-case-btn promo-btn-margin" value="активировать">
         </form>
         
+      </div>      
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="insufficientFunds">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 class="warning-title">УПС!</h3>
+        <a class="close-modal __modal-button" data-modal-window="insufficientFunds" data-modal-action="hide">
+          <svg viewBox="0 0 20 20">
+            <path fill="#fff" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+          </svg>
+        </a>
+      </div> 
+      <div class="modal-content">
+        <p class="for-note">Для открытия кейса недостаточно средств.</p>
+        <p class="popup-select-action-title">Ваш баланс: 100.00₽</p>
+        <a href="#" class="open-case-btn __modal-button" data-modal-window="payInWindow" data-modal-action="show">пополнить</a>
       </div>      
     </div>
   </div>

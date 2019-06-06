@@ -1,5 +1,7 @@
 @font-face{font-family:"MontserratR";src:url("../fonts/Montserrat-Regular.ttf");}
 @font-face{font-family:"MontserratSB";src:url("../fonts/Montserrat-SemiBold.ttf");}
+@font-face{font-family:"MontserratB";src:url("../fonts/Montserrat-Bold.ttf");}
+
 
 p, ul{margin:0;padding:0;}
 h1, h2, h3, h4, h5, h6{font-weight:normal;margin:0;}
@@ -1001,8 +1003,102 @@ stop {
 .booster-pop-item:hover .trade-pop-close-min{
   display: block;
 }
-
-
+.bonus-banner-100{
+  width: 100%;
+  height: 350px;
+  background: transparent url(../img/bonus-banner-bg.jpg) center center no-repeat;
+  background-size: cover;
+  padding: 40px 0 30px;
+}
+.bonus-banner-100 .ref-title h2{
+  margin-top:0;
+}
+.bonus-banner-input-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bonus-banner-input{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 20px;
+}
+.bonus-banner-input input[type="number"]{
+  height: 40px;
+  width: 130px;
+  background-color: transparent;
+  border-bottom: 2px solid #ffd400;
+  text-align: center;
+  font-size: 24px;
+  font-family: "MontserratSB", sans-serif;
+  color: #fff;
+}
+.bonus-banner-input input::-webkit-outer-spin-button,
+.bonus-banner-input input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.bonus-banner-input span{
+  color:#fff;
+  font-family: "MontserratSB", sans-serif;
+  font-size: 30px;
+  margin: 0 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.bonus-banner-input-percent{
+  min-width:120px;
+  width:120px;
+  height:50px;
+  border-radius: 25px;
+  border: 1px solid #ffd400;
+  -webkit-box-shadow: 0 0 10px 0 rgba(255, 212, 0,.55), inset 0 0 10px 0 rgba(255, 212, 0,.55);
+  box-shadow: 0 0 10px 0 rgba(255, 212, 0,.55), inset 0 0 10px 0 rgba(255, 212, 0,.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  font-family: "MontserratSB", sans-serif;
+}
+.bonus-banner-input-result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-family: "MontserratSB", sans-serif;
+}
+.bonus-banner-100-desc{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding:0 30px;
+  margin-top:30px;
+}
+.bonus-banner-100-desc .bonus-banner-100-desc-title{
+  text-transform: uppercase;
+  text-align: center;
+}
+.bonus-banner-100-desc-text{
+  margin-top:10px;
+  text-align: center;
+}
+.bonus-banner-100 p{
+  margin:5px 0 0;
+}
+.bonus-banner-input-content p{
+  font-size: 12px;
+  text-transform: uppercase;
+  position: absolute;
+  white-space: nowrap;
+  top: -20px;
+  left: -10px;
+}
+.bonus-banner-input-block{
+  position: relative;
+}
 /* ------------------------------------------------------------------------------------*/
 /* ----------------------------------MY SKINS------------------------------------------*/
 /* ------------------------------------------------------------------------------------*/
@@ -1057,6 +1153,7 @@ stop {
   background: linear-gradient(0deg, #12923f, #2dbe60);
   text-transform: uppercase;
   box-shadow: 0 0 15px 0 rgba(45, 190, 96, .55);
+  white-space: nowrap;
 }
 .mySkins-content-options .left .for-sell a:hover{
   box-shadow: 0 0 20px 0 rgba(45, 190, 96, .55);
@@ -1129,7 +1226,6 @@ stop {
   padding: 10px 0;
   z-index: 2;
 }
-
 .drop li {
   list-style: none;
   cursor: pointer;
@@ -1202,6 +1298,44 @@ stop {
   width: 150px;
   transition: all .2s linear;
 }
+.skin-list-item .skin-list-item-content:before{
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all .2s linear;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+.rarity-symbol-uncommon .skin-list-item-content:before{
+  -webkit-box-shadow: 0 0 60px rgba(23,94,255,.3), 0 0 35px rgba(23,94,255,.55), inset 0 0 50px rgba(23,94,255,.25);
+  box-shadow: 0 0 60px rgba(23,94,255,.3), 0 0 35px rgba(23,94,255,.55), inset 0 0 50px rgba(23,94,255,.25);
+}
+.rarity-symbol-common .skin-list-item-content:before{
+  -webkit-box-shadow: 0 0 60px rgba(107, 107, 107, .05), 0 0 35px rgba(107, 107, 107, .55), inset 0 0 50px rgba(107, 107, 107, .25);
+  box-shadow: 0 0 60px rgba(107, 107, 107, .05), 0 0 35px rgba(107, 107, 107, .55), inset 0 0 50px rgba(107, 107, 107, .25);
+}
+.rarity-symbol-rare .skin-list-item-content:before{
+  -webkit-box-shadow: 0 0 60px rgba(32, 0, 172, .05), 0 0 35px rgba(32, 0, 172, .55), inset 0 0 50px rgba(32, 0, 172, .25);
+  box-shadow: 0 0 60px rgba(32, 0, 172, .05), 0 0 35px rgba(32, 0, 172, .55), inset 0 0 50px rgba(32, 0, 172, .25);
+}
+.rarity-symbol-epic .skin-list-item-content:before{
+  -webkit-box-shadow: 0 0 60px rgba(105, 42, 199,.05), 0 0 35px rgba(105, 42, 199,.55), inset 0 0 50px rgba(105, 42, 199,.25);
+  box-shadow: 0 0 60px rgba(105, 42, 199,.05), 0 0 35px rgba(105, 42, 199,.55), inset 0 0 50px rgba(105, 42, 199,.25);
+}
+.rarity-symbol-legendary .skin-list-item-content:before{
+  -webkit-box-shadow: 0 0 60px rgba(255, 4, 152,.05), 0 0 35px rgba(255, 4, 152,.55), inset 0 0 50px rgba(255, 4, 152,.25);
+  box-shadow: 0 0 60px rgba(255, 4, 152,.05), 0 0 35px rgba(255, 4, 152,.55), inset 0 0 50px rgba(255, 4, 152,.25);
+}
+.rarity-symbol-arcane .skin-list-item-content:before{
+  -webkit-box-shadow: 0 0 60px rgba(187, 21, 21,.05), 0 0 35px rgba(187, 21, 21,.55), inset 0 0 50px rgba(187, 21, 21,.25);
+  box-shadow: 0 0 60px rgba(187, 21, 21,.05), 0 0 35px rgba(187, 21, 21,.55), inset 0 0 50px rgba(187, 21, 21,.25);
+}
+
 .skin-list-item:hover .skin-list-item-content img{
   transform: scale(1.1);
 }
@@ -1274,7 +1408,14 @@ stop {
   -webkit-box-shadow: 0 0 15px 0 rgba(24, 33, 54, 0.75), inset 0 0 15px 0 rgba(23,94,255,.75);
   box-shadow: 0 0 15px 0 rgba(23,94,255,.75), inset 0 0 15px 0 rgba(23,94,255,.75);
 }
-
+.cost-currency-g{
+  display: flex;
+  width:fit-content!important;
+  margin-right:30px;
+}
+.cost-currency-g span{
+  margin-left:5px;
+}
 
 /* ------------------------------------------------------------------------------------*/
 /* ----------------------------------INVENTORY-----------------------------------------*/
@@ -1476,6 +1617,8 @@ stop {
 .free-case .countdown-timer{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .free-case .countdown-timer .time-value{
   display: flex;
@@ -1604,6 +1747,22 @@ stop {
   background-size: 40px;
   margin-right: 15px;
 }
+.currency-g{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: #ffd400;
+  -webkit-text-shadow: 0 0 6px rgba(255, 212, 0, .95), 0 0 6px rgba(255, 212, 0, .25);
+  text-shadow: 0 0 6px rgba(255, 212, 0, .95), 0 0 6px rgba(255, 212, 0, .25); */
+}
+.currency-g-img{
+  display: block;
+  width:20px;
+  height:20px;
+  background: transparent url("../img/coin-ex.svg") center center no-repeat;
+  background-size:20px;
+  margin-left:5px;
+}
 
 /* ------------------------------------------------------------------------------------*/
 /* -------------------------------------CASE-------------------------------------------*/
@@ -1626,12 +1785,10 @@ stop {
 .items-inside-title{
   color:#fff;
   text-transform: uppercase;
-  margin-top:80px;
+  margin-top:60px;
   width:100%;
   text-align: center;
 }
-
-
 /* ------------------------------------------------------------------------------------*/
 /* ------------------------------MAKE GOLD-Y-------------------------------------------*/
 /* ------------------------------------------------------------------------------------*/
@@ -1750,7 +1907,9 @@ stop {
 .ref-user-info .user-profile-header-block .user-profile-name{
   width:160px;
 }
-
+.ref-user-info-total-amount{
+  width:250px;
+}
 
 /* ------------------------------------------------------------------------------------*/
 /* ----------------------------------SUPPORT-------------------------------------------*/
@@ -1932,11 +2091,11 @@ stop {
 }
 .chat-window textarea{
   resize: vertical;
-  width: 730px;
+  width: 685px;
   min-height: 50px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  padding: 15px 50px 15px 20px;
+  padding: 15px 95px 15px 20px;
   /*border-top: 1px solid #d4d4d4;*/
   border:none;
   font-size: 14px;
@@ -1954,6 +2113,7 @@ stop {
   background-size: 30px;
   top: 10px;
   right: 20px;
+  cursor:pointer;
 }
 .ticket-style{
   max-height:100px;
@@ -1972,6 +2132,99 @@ stop {
 }
 .ticket-style .review-author-link:after{
   display: none;
+}
+.mini-img{
+  display: none;
+}
+.ticket-style .add-info{
+  position: relative;
+}
+.ticket-style .notification-circle{
+  display: flex;
+  position: absolute;
+  color: #000;
+  font-size: 14px;
+  font-family: "MontserratSB", sans-serif;
+  height: 26px;
+  min-width: 20px;
+  justify-content: center;
+  align-items: center;
+  background: #ffd400;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(246, 181, 42, .85);
+  box-shadow: 0 0 10px 0 rgba(246, 181, 42, .85);
+  padding: 1px 4px;
+  top: -35px;
+  right: -30px;
+}
+.appeal-number-title{
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #6b6b6b;
+  text-align: center;
+  margin: 20px 0 40px;
+}
+.chat-window form input[type="file"]{
+  position: absolute;
+  opacity: 0;
+  /* top: 10px;
+  right: 60px;
+  z-index:-1; */
+  width:30px;
+  height:30px;
+  cursor: pointer;
+  z-index:2;
+}
+.label-input-file{
+  display: block;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: transparent url(../img/paper-clip.svg) center center no-repeat;
+  background-size: 30px;
+  top: 10px;
+  right: 60px;
+  cursor: pointer;
+}
+.load-guest-photos-list{
+  margin-top:10px;
+}
+.pic-view-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.5);
+  height: 100px;
+  min-width: 100px;
+  width: 100px;
+  margin: 5px;
+  position: relative;
+}
+.preview-img{
+  height:100%;
+  width:100%;
+  border-radius: 10px;
+}
+.delete-pic-preview{
+  position: absolute;
+  display: block;
+  height:26px;
+  width:26px;
+  background: #fff url("../img/close.svg") center center no-repeat;
+  background-size:12px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.5);
+  transform: rotate(0deg);
+  top: -13px;
+  right: -13px;
+  transition:all .2s ease;
+}
+.delete-pic-preview:hover{
+  transform: rotate(90deg);
 }
 
 /* .ticket-style .review-author-text:after {
@@ -2232,7 +2485,9 @@ stop {
 .review-banner .free-case .countdown-timer .time-value .time-value-title{
   margin-top:10px;
 }
-
+.countdown-timer-mini{
+  margin-bottom:0px!important;
+}
 
 /* ------------------------------------------------------------------------------------*/
 /* ----------------------------------support-main--------------------------------------*/
@@ -2335,13 +2590,119 @@ stop {
   text-transform: uppercase;
   font-family: "MontserratSB", sans-serif;
   width: 150px;
-  font-size: 14px;
-  height: 50px;  
-  margin-top:10px;
+  font-size: 14px; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.booster-item .activated-text{
+  color:#12923f;
+  font-size:14px;
+  margin-top:5px;
+  text-align: center;
+}
+.booster-state-activated{
+  margin-top:5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* ------------------------------------------------------------------------------------*/
+/* -----------------------------------NOT FOUND----------------------------------------*/
+/* ------------------------------------------------------------------------------------*/
+#notfound {
+  position: relative;
+  max-height: 100vh;
+  min-height: 100vh;
+  background: #08080a url(../img/bg-pattern.png);
+}
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.notfound {
+  max-width: 767px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+.notfound .notfound-404 {
+  position: relative;
+  height: 180px;
+  margin-bottom: 20px;
+  z-index: -1;
+}
+.notfound .notfound-404 h1 {
+  font-family: 'MontserratB', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50% , -50%);
+      -ms-transform: translate(-50% , -50%);
+          transform: translate(-50% , -50%);
+  font-size: 224px;
+  font-weight: 900;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -12px;
+  color: #08080a;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0px #00b4ff, 1px 1px 0px #3406a3;
+  letter-spacing: -20px;
+}
+.notfound .notfound-404 h2 {
+  font-family: 'MontserratSB', sans-serif;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 110px;
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0px 2px 0px #00b4ff;
+  letter-spacing: 13px;
+  margin: 0;
+}
+.notfound a {
+  font-family: 'MontserratSB', sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  color: rgb(0, 178, 255);
+  text-decoration: none;
+  border: 2px solid;
+  background: transparent;
+  padding: 10px 40px;
+  font-size: 14px;
+  font-weight: 700;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(23,94,255,.55), inset 0 0 10px 0 rgba(23,94,255,.55);
+  box-shadow: 0 0 10px 0 rgba(23,94,255, 0.55), inset 0 0 10px 0 rgba(23,94,255,.55);
+  transition: all .2s linear;
+}
+.notfound a:hover {
+  -webkit-box-shadow: 0 0 15px 0 rgba(23,94,255,.55), inset 0 0 10px 0 rgba(23,94,255,.55);
+  box-shadow: 0 0 13px 0 rgba(23,94,255,.55), inset 0 0 13px 0 rgba(23,94,255,.55);
+}
+@media only screen and (max-width: 767px) {
+    .notfound .notfound-404 h2 {
+        font-size: 24px;
+    }
+}
+@media only screen and (max-width: 480px) {
+  .notfound .notfound-404 h1 {
+      font-size: 150px;
+  }
+}
+
 
 
 /* MEDIA */
@@ -2743,6 +3104,11 @@ footer,
   .review-banner-content {
     margin-bottom: 10px;
   }
+  .mySkins-content-options .left,
+  .mySkins-content-options{
+    flex-wrap:wrap;
+    justify-content: center;
+  }
 }
 @media (max-width: 767px){
   .live-drop-list{
@@ -2784,7 +3150,7 @@ footer,
     border-radius: unset;
   }
   .chat-window textarea{
-    width:calc(100vw - 70px);
+    width:calc(100vw - 140px);
   }
   .review-author-content{
     width:unset;
@@ -2794,7 +3160,8 @@ footer,
     margin-left: auto;
   }
   .review-author,
-  .booster-second-title br{
+  .booster-second-title br,
+  .bonus-banner-100-desc-text br{
     display: none;
   }
   .review-textarea textarea{
@@ -2869,6 +3236,30 @@ footer,
   footer{
     padding: 0px 0 20px;
   }
+  .mini-img{
+    display: flex;
+    height:25px;
+    width:25px;
+    border-radius: 50%;
+    margin-right:10px;
+  }
+  .ticket-style .notification-circle{
+    right:0;
+  }
+  .trade-skins-list{
+    max-width: 440px;
+  }
+  .bonus-banner-input input[type="number"],
+  .bonus-banner-input-percent,
+  .bonus-banner-input-result{
+    font-size:18px;
+  }
+  .bonus-banner-input span{
+    font-size:20px;
+  }
+  .bonus-banner-input-percent{
+    height:40px;
+  }
 }
 @media (max-width: 589px){
   header,
@@ -2879,7 +3270,6 @@ footer,
     max-width: unset;
   }
   .live-drop-title,
-  .inventory-link-icon,
   .ref-statistic .user-profile-header-block,
   .support-message .support-img{
     display: none;
@@ -2897,7 +3287,8 @@ footer,
     flex-direction: column;
     justify-content: center;;
   }
-  .param{
+  .param,
+  .banner-text .text-blue{
     margin-bottom: 15px;
   }
   .footer-links .links{
@@ -2934,7 +3325,8 @@ footer,
   .profile-inventory-block .left .user-profile-header-block .user-profile-options,
   .profile-inventory-block .left .user-profile-header-block .user-profile-balance,
   .ref-user-info .user-profile-header-block .user-profile-options,
-  .ref-user-info .user-profile-header-block .user-profile-balance{
+  .ref-user-info .user-profile-header-block .user-profile-balance,
+  .mySkins-content-options .left .checked-number span {
     font-size: 14px;
   }
   .banner .banner-content {
@@ -2949,6 +3341,7 @@ footer,
   .video{
     width:320px;
     margin-bottom:20px;
+    margin-top: 30px;
   }
   .ref-user-link input{
     width:100%;
@@ -2973,7 +3366,7 @@ footer,
     margin-right:5px;
   }
   .chat-window textarea{
-    width:calc(100vw - 70px);;
+    width:calc(100vw - 140px);;
   }
   .trade-skins-list{
     max-width: 330px;
@@ -2992,6 +3385,7 @@ footer,
   }
   .invemtory-link{
     padding:0;
+    position: relative;
   }
   .profile-inventory-block .right {
     padding: 0 15px 10px;
@@ -3007,6 +3401,60 @@ footer,
   }
   .support-appeal{
     margin-top:20px;
+  }
+  .inventory-link-icon {
+    height: 30px;
+    min-width: 30px;
+  }
+  .skin-icon,
+  .coin-icon,
+  .promo-icon,
+  .boost-icon{
+    background-size:30px;
+    position: absolute;
+    left: -45px;
+    top:5px;
+  }
+  .appeal-number-title{
+    margin: 20px 0 20px;
+  }
+  .load-guest-photos-list{
+    margin-right:10px;
+  }
+  .booster-second-title,
+  .bonus-banner-100 p {
+    margin-top: 10px;
+  }
+  .cost-currency-g{
+    margin-right:0;
+  }
+  .bonus-banner-100{
+    height: auto;
+  }
+  .bonus-banner-input{
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .bonus-banner-input input[type="number"]{
+    height:30px;
+    margin-top:15px;
+  }
+  .bonus-banner-input span{
+    margin:10px 0;
+  }
+  .bonus-banner-100 .ref-title h2{
+    padding:0 15px;
+  }
+  .banner-text .text-yellow,
+  .banner-text p{
+    margin-bottom:5px;
+  }
+  .bonus-banner-input-block{
+    margin-top:20px;
+  }
+  .bonus-banner-input-content p{
+    top:-15px;
   }
 }
 @media (max-width: 375px){
@@ -3038,5 +3486,11 @@ footer,
   .live-drop-item{
     min-width:100px;
     width:100px;
+  }
+  .skin-icon,
+  .coin-icon,
+  .promo-icon,
+  .boost-icon{
+    left: -32px;
   }
 }

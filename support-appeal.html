@@ -21,13 +21,13 @@
       <header> 
           <a href="index.html" class="brand">Логотип</a>
           <nav>  
-            <a href="inventory.html" class="nav-link active-link">инвентарь</a>             
+            <a href="inventory.html" class="nav-link">инвентарь</a>             
             <a href="#" class="nav-link __modal-button" data-modal-window="promoWindow" data-modal-action="show">
               <div class="notification-circle">1</div>
               промокод
             </a>             
             <a href="reviews.html" class="nav-link">отзывы</a>              
-            <a href="support.html" class="nav-link">поддержка</a>
+            <a href="support.html" class="nav-link active-link">поддержка</a>
           </nav>
           <div class="authorization-block" style="display: none;">
             <div class="authorization-block-title">авторизация</div>
@@ -83,13 +83,13 @@
                 </div>
               </div>
               <div class="hidden-nav-list">
-                <a href="inventory.html" class="nav-link active-link">инвентарь</a>             
+                <a href="inventory.html" class="nav-link">инвентарь</a>             
                 <a href="#" class="nav-link __modal-button" data-modal-window="promoWindow" data-modal-action="show">
                   <div class="notification-circle">1</div>
                   промокод
                 </a>             
                 <a href="reviews.html" class="nav-link">отзывы</a>              
-                <a href="support.html" class="nav-link">поддержка</a>
+                <a href="support.html" class="nav-link active-link">поддержка</a>
               </div> 
             </div>
           </div>
@@ -200,10 +200,10 @@
         <div class="case-group-title">
           <h2>поддержка</h2>
           <p></p>
-				</div> 
-				<div class="reference-number-title">обращение в поддержку #111111111111111111</div>
-				<div class="reference-number-title" style="margin-top:20px;">ТЕМА: НАЗВАНИЕ ТЕМЫ</div>
-				<div class="appeal-note">Нажмите <a href="#">«закрыть тему»</a>, если вопрос больше не актуален</div>
+				</div> 				
+        <div class="reference-number-title">ТЕМА: НАЗВАНИЕ ТЕМЫ</div>
+        <div class="reference-number-title appeal-number-title">обращение в поддержку #111111111111111111</div>
+				<div class="appeal-note">Нажмите <a href="#" class="__modal-button" data-modal-window="closeTopic" data-modal-action="show">«закрыть тему»</a>, если вопрос больше не актуален</div>
 			</div>
 			
 			<div class="support-appeal">
@@ -273,15 +273,55 @@
 								<div class="message-time">12:45</div>
 								<div class="message-area">Алло!
 								</div>
-							</div>
-						</div>
+              </div>
+            </div>
+
+						<div class="user-message-content">
+              <div class="user-message">
+                <div class="message-time">12:45</div>
+                <ul class="load-guest-photos-list trade-skins-list">
+                  <li class="pic-view-item">
+                    <div id="preview1" class="preview-img" style="background: url(img/user-img.jpg) center center no-repeat;background-size: cover;"></div>
+                    <a href="#" class="delete-pic-preview" title="Удалить"></a>
+                  </li> 
+                  <li class="pic-view-item">
+                    <div id="preview1" class="preview-img" style="background: url(img/user-img.jpg) center center no-repeat;background-size: cover;"></div>
+                    <a href="#" class="delete-pic-preview" title="Удалить"></a>
+                  </li> 
+                  <li class="pic-view-item">
+                    <div id="preview1" class="preview-img" style="background: url(img/user-img.jpg) center center no-repeat;background-size: cover;"></div>
+                    <a href="#" class="delete-pic-preview" title="Удалить"></a>
+                  </li>
+                  <li class="pic-view-item">
+                    <div id="preview1" class="preview-img" style="background: url(img/user-img.jpg) center center no-repeat;background-size: cover;"></div>
+                    <a href="#" class="delete-pic-preview" title="Удалить"></a>
+                  </li>
+                  <li class="pic-view-item">
+                    <div id="preview1" class="preview-img" style="background: url(img/user-img.jpg) center center no-repeat;background-size: cover;"></div>
+                    <a href="#" class="delete-pic-preview" title="Удалить"></a>
+                  </li>
+                  <li class="pic-view-item">
+                    <div id="preview1" class="preview-img" style="background: url(img/user-img.jpg) center center no-repeat;background-size: cover;"></div>
+                    <a href="#" class="delete-pic-preview" title="Удалить"></a>
+                  </li>                
+                </ul>	
+              </div>
+              <div class="user-message">
+                <div class="message-time">12:45</div>
+                <div class="message-area">Алло!
+                </div>
+              </div>
+            </div>
+
 					</div>
-					<form action="" method="" id="text">
-						<textarea class="input-message" rows="10" cols="45" autofocus placeholder="Введите текст..." form="text" ></textarea>
-						<input type="submit" value="">
+          <form action="" enctype="multipart/form-data" method="post" id="text">            
+            <textarea class="input-message" rows="10" cols="45" autofocus placeholder="Введите текст..." form="text" ></textarea>
+            
+            <label class="label-input-file" for="photo"><input type="file" name="photo" multiple accept="image/*,image/jpeg"></label>  
+            <input type="submit" value="">           
 					</form>
 					
-				</div>
+        </div>
 			</div>
     </div>
 
@@ -378,8 +418,29 @@
           <label for="promo" class="promo-label-margin">введите промокод:</label>
           <input type="text" id="promo" name="promo" placeholder="XXX-XXX-XXX">
           <input type="submit" class="open-case-btn promo-btn-margin" value="активировать">
-        </form>
-        
+        </form>        
+      </div>      
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="closeTopic">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>подтвердите действие</h3>
+        <a class="close-modal __modal-button" data-modal-window="closeTopic" data-modal-action="hide">
+          <svg viewBox="0 0 20 20">
+            <path fill="#fff" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+          </svg>
+        </a>
+      </div> 
+      <div class="modal-content">
+        <p class="for-note">Этот диалог будет закрыт и удален. </p>
+        <p class="popup-select-action-title">Удалить диалог?</p>
+        <div class="select-action-block">
+          <a href="#" class="open-case-btn delete-dialogue">удалить</a> 
+          <a href="#" class="open-case-btn __modal-button" data-modal-window="closeTopic" data-modal-action="hide">отмена</a> 
+        </div>
+               
       </div>      
     </div>
   </div>

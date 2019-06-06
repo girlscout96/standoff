@@ -212,8 +212,13 @@
 							<img src="img/booster-luck.jpg">
 							<div class="name">бустер удачи</div>
 						</div>
-						<a href="#" class="open-case-btn __modal-button" data-modal-window="boosterLuck" data-modal-action="show">активировать</a>
-						<div class="activated" style="display: none;">активирован</div>
+						<a href="#" class="open-case-btn __modal-button" data-modal-window="boosterLuck" data-modal-action="show" style="display: none;">активировать</a>            
+            <div class="booster-state-activated" >
+              <div class="activated" >активирован</div>
+              <div class="activated-text">Вы получили +5% удачи</div>
+            </div>
+            
+            
 					</div>
 					<div class="booster-item wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-name: fadeInUp; animation-delay: 0.1s;">
 						<div class="boost">
@@ -365,6 +370,10 @@
             VK.Widgets.ContactUs("vk_contact_us", {height: 30}, -20003922);
           </script>
         </div>
+        <div class="for-vk-unauthorized" >
+          <p class="receipt-condition">Для работы с бустерами привяжите VK</p>
+          <a href="#" class="open-case-btn auth-btn"><i class="icon-vk"></i>авторизация</a>
+        </div>
       </div>      
     </div>
   </div>
@@ -390,7 +399,7 @@
           Для активации бустера подпишитесь <br>
           на нашу группу
         </p>
-        <div class="action-for">
+        <div class="action-for" >
             <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
 
             <!-- VK Widget -->
@@ -398,6 +407,10 @@
             <script type="text/javascript">
             VK.Widgets.Group("vk_groups", {mode: 3, width: "320"}, 20003922);
             </script>
+        </div>
+        <div class="for-vk-unauthorized" style="display:none">
+          <p class="receipt-condition">Для работы с бустерами привяжите VK</p>
+          <a href="#" class="open-case-btn auth-btn"><i class="icon-vk"></i>авторизация</a>
         </div>
       </div>      
     </div>
@@ -432,6 +445,10 @@
               }());
             </script>
         </div>
+        <div class="for-vk-unauthorized" style="display:none">
+          <p class="receipt-condition">Для работы с бустерами привяжите VK</p>
+          <a href="#" class="open-case-btn auth-btn"><i class="icon-vk"></i>авторизация</a>
+        </div>
       </div>      
     </div>
   </div>
@@ -452,12 +469,14 @@
             «Этот бустер даст вам шикарную золотую рамку 
             вокруг фотографии профиля» 
         </p>
-        <p class="receipt-condition">
+        <p class="receipt-condition" style="display:none">
             Для активации бустера сделайте<br>
             что-нибудь
         </p>
-        <div class="action-for">
-
+        <div class="action-for"></div>
+        <div class="for-vk-unauthorized" >
+          <p class="receipt-condition">Для работы с бустерами привяжите VK</p>
+          <a href="#" class="open-case-btn auth-btn"><i class="icon-vk"></i>авторизация</a>
         </div>
       </div>      
     </div>

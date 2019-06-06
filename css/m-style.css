@@ -184,7 +184,7 @@
   margin:10px;
 }
 .modal-content .ps{
-  color:#6b6b6b;
+  color:#b6b6b6;
   line-height: 1.2;
   font-size: 14px;
 }
@@ -281,7 +281,7 @@
 }
 .booster-desc{
   margin-top:10px;
-  color: #6b6b6b;
+  color: #b6b6b6;
   line-height: 1.5;
   padding:0 20px;
   text-align: center;
@@ -303,7 +303,6 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  padding-bottom: 30px;
 }
 #boosterLuck .modal,
 #promoWindow .modal,
@@ -314,6 +313,12 @@
 #warningChatCreate .modal{
   min-height: 16rem;
 }
+#closeTopic .modal{
+  min-height: 16.5rem;
+}
+#insufficientFunds .modal{
+  min-height: 15.5rem;
+}
 #boosterShyrp .action-for{
   max-height: 200px;
   overflow-y: scroll;
@@ -323,7 +328,8 @@
 #warningTradeSending  .modal-content,
 #beginnersWindow .modal-content,
 #boosterLuck .modal-content,
-#boosterGoldBorder .modal-content{
+#boosterGoldBorder .modal-content,
+#boosterBonus .modal-content{
   padding-bottom: 30px;
 }
 #boosterLuck img,
@@ -373,18 +379,44 @@
   -webkit-box-shadow: 0 0 15px 0 rgba(45, 190, 96, .55);
   box-shadow: 0 0 15px 0 rgba(45, 190, 96, .55);
 }
+.auth-btn{
+  background: linear-gradient(0deg, #039ee0, #00b4ff);
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 180, 255, .55);
+  box-shadow: 0 0 15px 0 rgba(0, 180, 255, .55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-btn:hover{
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 180, 255, .55);
+  box-shadow: 0 0 20px 0 rgba(0, 180, 255, .55);
+}
+.auth-btn .icon-vk{
+  font-size: 22px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+.for-vk-unauthorized{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #successTradeSending .open-case-btn:hover{
   -webkit-box-shadow: 0 0 20px 0 rgba(45, 190, 96, .55);
   box-shadow: 0 0 20px 0 rgba(45, 190, 96, .55)
 }
 #warningTradeSending .open-case-btn,
-#warningChatCreate .open-case-btn{
+#warningChatCreate .open-case-btn,
+.delete-dialogue,
+#insufficientFunds .open-case-btn{
   background: linear-gradient(0deg, #b60000, #e80a0a);
   -webkit-box-shadow: 0 0 15px 0 rgba(232, 10, 10, .55);
   box-shadow: 0 0 15px 0 rgba(232, 10, 10, .55);
 }
 #warningTradeSending .open-case-btn:hover,
-#warningChatCreate .open-case-btn{
+#warningChatCreate .open-case-btn:hover,
+.delete-dialogue:hover,
+#insufficientFunds .open-case-btn:hover{
   -webkit-box-shadow: 0 0 20px 0 rgba(232, 10, 10, .55);
   box-shadow: 0 0 20px 0 rgba(232, 10, 10, .55)
 }
@@ -410,12 +442,51 @@
   width: 180px;
   height: 180px;
 }
+.delete-dialogue{
+  margin-right:15px;
+}
+.select-action-block{
+  margin-top:10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.popup-select-action-title{
+  text-transform: uppercase;
+  line-height: 1.5;
+  padding:0 15px;
+  text-align: center;
+}
+#payInWindow .modal{
+  z-index:101;
+}
+.after-activation-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:20px;
+}
+.after-activation-info .after-activation-title{
+  text-transform: uppercase;
+}
+.after-activation-info .after-activation-desc{
+  margin-top:10px;
+  padding-bottom:30px;
+}
+
 /**
   * Mobile styling
   */
 @media (max-width: 1009px){
   .modal-content input[type="submit"]{
     font-size: 14px;
+  }
+  .auth-btn .icon-vk {
+    font-size: 16px;
+    margin-bottom: 1px;
+  }
+  .auth-btn{
+    padding:0 10px;
   }
 }
 @media only screen and (max-width: 39.9375em) {
@@ -465,7 +536,9 @@
   #appealTopic,
   .booster-desc,
   .receipt-condition,
-  #warningChatCreate p{
+  #warningChatCreate p,
+  .after-activation-info .after-activation-title,
+  .after-activation-info .after-activation-desc{
     font-size:14px;
   }
   .modal-content .for-note br{

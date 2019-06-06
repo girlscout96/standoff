@@ -21,7 +21,7 @@
       <header> 
         <a href="index.html" class="brand">Логотип</a>
         <nav>  
-          <a href="inventory.html" class="nav-link active-link">инвентарь</a>             
+          <a href="inventory.html" class="nav-link">инвентарь</a>             
           <a href="#" class="nav-link __modal-button" data-modal-window="promoWindow" data-modal-action="show">
             <div class="notification-circle">1</div>
             промокод
@@ -83,7 +83,7 @@
               </div>
             </div>
             <div class="hidden-nav-list">
-              <a href="inventory.html" class="nav-link active-link">инвентарь</a>             
+              <a href="inventory.html" class="nav-link">инвентарь</a>             
               <a href="#" class="nav-link __modal-button" data-modal-window="promoWindow" data-modal-action="show">
                 <div class="notification-circle">1</div>
                 промокод
@@ -193,12 +193,39 @@
                   <img src="img/7.png">               
                 </div>
               </div>
-              
-            
           </div>
-        </div>
-        
+        </div>  
       </div>
+
+      <div class="bonus-banner-100">
+        <div class="ref-title">
+          <h2>Получай +100% к пополнению баланса</h2>
+          <p class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Осталось 2 часа 12 минут</p>
+        </div>
+        <div class="bonus-banner-input-content">  
+          <div class="bonus-banner-input">
+            <div class="bonus-banner-input-block">
+              <p>сумма пополнения</p>
+              <input type="number" class="bonus-banner-input-sum" min="10" placeholder="1000"> 
+            </div>
+
+            <span>+</span>
+            <div class="bonus-banner-input-percent">100%</div>
+            <span>=</span>
+            <div class="bonus-banner-input-result">2000₽</div>
+          </div>
+          <a href="#" class="open-case-btn __modal-button" data-modal-window="payInWindow" data-modal-action="show">пополнить</a>
+        </div>
+        <div class="bonus-banner-100-desc">
+          <p class="bonus-banner-100-desc-title">Как это работает?</p>
+          <p class="bonus-banner-100-desc-text">
+            Например, в результате пополнения баланса на сайт в 1000₽ <br>
+            ты получишь 2000₽. Бонус работает абсолютно с<br>
+            любой суммой.</p>
+        </div>
+      </div>
+
+
       <div class="page-content">
         <div class="title-content">
           <h1>Кейсы<br> с 100% шансом победы</h1>
@@ -414,13 +441,17 @@
           <input type="text" id="promo" name="promo" placeholder="XXX-XXX-XXX">
           <input type="submit" class="open-case-btn promo-btn-margin" value="активировать">
         </form>
-        
+        <div class="after-activation-info">
+            <p class="after-activation-title">промокод активирован</p>
+            <p class="after-activation-desc">Вы получили +5% к шансу выпадения!</p>
+        </div> 
       </div>      
     </div>
   </div>
 
   
-  <div class="modal-overlay active" id="beginnersWindow">
+  <!-- Окно про подписку
+    <div class="modal-overlay active" id="beginnersWindow">
     <div class="modal active">
       <div class="modal-head">
         <h3></h3>
@@ -436,7 +467,7 @@
         <a href="#" class="open-case-btn">подписаться</a>        
       </div>      
     </div>
-  </div>
+  </div> -->
 
   <!--END OF MODAL WINDOWS-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
