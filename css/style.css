@@ -2211,7 +2211,7 @@ stop {
   display: block;
   height:26px;
   width:26px;
-  background: #fff url("../img/close.svg") center center no-repeat;
+  background: #0c0d10  url("../img/close-white.svg") center center no-repeat;
   background-size:12px;
   border-radius: 50%;
   -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,.5);
