@@ -473,12 +473,110 @@
   margin-top:10px;
   padding-bottom:30px;
 }
+.modal-content .skin-list-item,
+.modal-content .skin-list-item:hover{
+  border:none;
+}
+.modal-content .skin-list-item{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.next-op{
+  display:flex;
+  margin-top:10px;
+  padding-bottom:30px;
+}
+.next-op .for-output-btn,
+.next-op .for-sell{
+  font-family: "MontserratSB", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #fff;
+}
+.next-op .for-output-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(0deg, #ed970f, #ffd400);
+  box-shadow: 0 0 15px 0 rgba(246, 181, 42, .55);
+  margin-right:15px;
+}
+.next-op .for-output-btn:hover {
+  box-shadow: 0 0 20px 0 rgba(246, 181, 42, .55);
+}
+.next-op .for-sell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 0 20px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(0deg, #12923f, #2dbe60);
+  box-shadow: 0 0 15px 0 rgba(45, 190, 96, .55);
+  white-space: nowrap;
+}
+.next-op .for-sell span{
+  margin-left:5px;
+}
+.next-op .for-sell:hover {
+  box-shadow: 0 0 20px 0 rgba(45, 190, 96, .55);
+}
+.modal-content .rarity-symbol-uncommon:before, 
+.modal-content .rarity-symbol-rare:before, 
+.modal-content .rarity-symbol-common:before, 
+.modal-content .rarity-symbol-epic:before, 
+.modal-content .rarity-symbol-legendary:before, 
+.modal-content .rarity-symbol-arcane:before{
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all .2s linear;
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+  top: 40px;
+}
+.modal-content .rarity-symbol-common:before{
+  -webkit-box-shadow: 0 0 45px rgba(107, 107, 107, .05), 0 0 35px rgba(107, 107, 107, .45), inset 0 0 50px rgba(107, 107, 107, .25);
+  box-shadow: 0 0 45px rgba(107, 107, 107, .05), 0 0 35px rgba(107, 107, 107, .45), inset 0 0 50px rgba(107, 107, 107, .25);
+}
+.modal-content .rarity-symbol-uncommon:before{
+  -webkit-box-shadow: 0 0 45px rgba(23,94,255,.05), 0 0 35px rgba(23,94,255,.45), inset 0 0 50px rgba(23,94,255,.25);
+  box-shadow: 0 0 45px rgba(23,94,255,.05), 0 0 35px rgba(23,94,255,.45), inset 0 0 50px rgba(23,94,255,.25);
+}
+.modal-content .rarity-symbol-rare:before{
+  -webkit-box-shadow: 0 0 45px rgba(32, 0, 172, .05), 0 0 35px rgba(32, 0, 172, .45), inset 0 0 50px rgba(32, 0, 172, .25);
+  box-shadow: 0 0 45px rgba(32, 0, 172, .05), 0 0 35px rgba(32, 0, 172, .45), inset 0 0 50px rgba(32, 0, 172, .25);
+}
+.modal-content .rarity-symbol-epic:before {
+  -webkit-box-shadow: 0 0 45px rgba(105, 42, 199,.05), 0 0 35px rgba(105, 42, 199,.45), inset 0 0 50px rgba(105, 42, 199,.25);
+  box-shadow: 0 0 45px rgba(105, 42, 199,.05), 0 0 35px rgba(105, 42, 199,.45), inset 0 0 50px rgba(105, 42, 199,.25);
+}
+.modal-content .rarity-symbol-legendary:before{
+  -webkit-box-shadow: 0 0 45px rgba(255, 4, 152,.05), 0 0 35px rgba(255, 4, 152,.45), inset 0 0 50px rgba(255, 4, 152,.25);
+  box-shadow: 0 0 45px rgba(255, 4, 152,.05), 0 0 35px rgba(255, 4, 152,.45), inset 0 0 50px rgba(255, 4, 152,.25);
+}
+.modal-content .rarity-symbol-arcane:before{
+  -webkit-box-shadow: 0 0 45px rgba(187, 21, 21,.05), 0 0 35px rgba(187, 21, 21,.45), inset 0 0 50px rgba(187, 21, 21,.25);;
+  box-shadow: 0 0 45px rgba(187, 21, 21,.05), 0 0 35px rgba(187, 21, 21,.45), inset 0 0 50px rgba(187, 21, 21,.25);
+}
 
 /**
   * Mobile styling
   */
 @media (max-width: 1009px){
-  .modal-content input[type="submit"]{
+  .modal-content input[type="submit"],
+  .next-op .for-output-btn,
+  .next-op .for-sell,
+  .modal-content .skin-list-item .skin-list-item-content .case-name{
     font-size: 14px;
   }
   .auth-btn .icon-vk {
@@ -487,6 +585,13 @@
   }
   .auth-btn{
     padding:0 10px;
+  }
+  .next-op .for-output-btn{
+    width: 150px;
+    height: 40px;
+  }
+  .next-op .for-sell{
+    height: 40px;
   }
 }
 @media only screen and (max-width: 39.9375em) {
@@ -564,5 +669,19 @@
   }
   .modal-content input[type="submit"]{
     margin-top:20px;
+  }
+}
+@media (max-width: 425px){
+  .next-op{
+    flex-direction: column;
+    align-items: center;
+  }
+  .next-op .for-output-btn{
+    margin-right:0;
+    margin-bottom:15px;
+  }
+  .modal-content .skin-list-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
