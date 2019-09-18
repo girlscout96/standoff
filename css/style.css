@@ -2700,6 +2700,70 @@ stop {
       font-size: 150px;
   }
 }
+/*  ROLL  */
+.roll{
+  display: flex;
+  justify-content: center;
+}
+.roll .live-drop-list{
+  height:150px;
+}
+.roll .live-drop-item{
+  min-width:163px;
+}
+.roll-bg{
+  height:150px;
+}
+.roll .live-drop-item img {
+  height: 100px;
+  width: 120px;
+}
+.roll .rarity-symbol-uncommon,
+.roll .rarity-symbol-common,
+.roll .rarity-symbol-rare,
+.roll .rarity-symbol-epic,
+.roll .rarity-symbol-legendary,
+.roll .rarity-symbol-arcane{
+  background-size: contain;
+}
+.roll .live-drop-item:hover{
+  background-color: unset;
+}
+.roll .skin-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 150px;
+  padding: 0 15px;
+  margin-top: 10px;
+  text-align: center;
+  font-size:14px;
+  color:#6b6b6b;
+}
+.roll .live-drop-list{
+  padding:0;
+  margin:0;
+}
+.roll-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.roll-cursor{
+  position: absolute;
+  height:180px;
+  width:4px;
+  background: linear-gradient(0deg, #ed970f, #ffd400);
+  top:-15px;
+}
+.roll-container .open-case-btn{
+  margin-top:60px;
+}
+.page-content .roll-title{
+  margin: 0 0 40px;
+}
 
 
 
@@ -3456,6 +3520,28 @@ footer,
   }
   .bonus-banner-input-content p{
     top:-15px;
+  }
+  .roll .live-drop-item{
+    min-width: 118px;
+    width: 118px;
+  }
+  .roll .live-drop-item img {
+    height: 70px;
+    width: 70px;
+  }
+  .roll .skin-name{
+    width:100px;
+    font-size:12px;
+  }
+  .roll-cursor {
+    position: absolute;
+    height: 160px;
+    width: 2px;
+    background: linear-gradient(0deg, #ed970f, #ffd400);
+    top: -5px;
+  }
+  .roll-container .open-case-btn {
+    margin-top: 40px;
   }
 }
 @media (max-width: 375px){
