@@ -26,7 +26,9 @@ textarea:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus,
 button:active,
-button:focus{
+button:focus,
+select:active,
+select:focus{
     outline: none;
     text-decoration: none;
 }
@@ -1184,8 +1186,9 @@ stop {
 
 /* select */
 .customForm {
-	color: #fff;
+  color: #fff;
   display:flex;
+  align-items:center;
   margin-top:15px;
 }
 .select-label{
@@ -2763,6 +2766,67 @@ stop {
 }
 .page-content .roll-title{
   margin: 0 0 40px;
+}
+.big {
+  font-size: 1.2em;
+}
+
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px; /* demo only */
+}
+.custom-dropdown select {
+  cursor:pointer;
+  background-color: #1e212a;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 25px;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+  font-family: "MontserratR", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  font-family: "fontello";
+  content: "\e800";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 8px;
+  top: 50%;
+  margin-top: -.5em;
+}
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+.custom-dropdown::after {
+  color: #ffd400;
 }
 
 
