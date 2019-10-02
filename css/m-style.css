@@ -329,7 +329,8 @@
 #beginnersWindow .modal-content,
 #boosterLuck .modal-content,
 #boosterGoldBorder .modal-content,
-#boosterBonus .modal-content{
+#boosterBonus .modal-content,
+#performAuthorization .modal-content{
   padding-bottom: 30px;
 }
 #boosterLuck img,
