@@ -912,7 +912,9 @@ stop {
   transform: skew(-15deg);
   z-index:-1;
 }
-.cases-list-item .decs .discounted{
+.cases-list-item .decs .discounted,
+.top-case-item .decs .discounted
+{
   display: flex;
   justify-content: center;
   width: 100%;
