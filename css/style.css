@@ -79,6 +79,9 @@ Press the footer to the bottom of the page */
   .brand{
     width:120px;
   }
+  nav{
+    display:flex;
+  }
   nav a{
     position: relative;
     text-transform: uppercase;
